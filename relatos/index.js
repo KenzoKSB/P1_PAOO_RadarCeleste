@@ -27,9 +27,9 @@ app.use(express.json())
 //base em memória volátil: chave é o id do avistamento, valor é o vetor de relatos
 const relatosPorAvistamentoId = {}
 
-//PUT /avistamentos/1/relatos
+//Post /avistamentos/1/relatos
 //corpo: { texto }
-app.put('/avistamentos/:id/relatos', async (req, res) => {
+app.post('/avistamentos/:id/relatos', async (req, res) => {
   const idRelato = uuidv4()
   const { texto } = req.body || {}
   const relato = {

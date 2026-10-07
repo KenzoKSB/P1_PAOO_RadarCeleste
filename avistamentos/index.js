@@ -29,9 +29,9 @@ app.get('/avistamentos', (req, res) => {
   res.json(avistamentos)
 })
 
-//PUT /avistamentos
+//Post /avistamentos
 //corpo: { local, descricao }
-app.put('/avistamentos', async (req, res) => {
+app.post('/avistamentos', async (req, res) => {
   const { local, descricao } = req.body || {}
   const vazio = (valor) => typeof valor !== 'string' || valor.trim() === ''
   //validar antes de alterar a base ou o contador
