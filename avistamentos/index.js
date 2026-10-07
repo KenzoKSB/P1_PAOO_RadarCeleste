@@ -31,7 +31,7 @@ app.get('/avistamentos', (req, res) => {
 
 //PUT /avistamentos
 //corpo: { local, descricao }
-app.put('/avistamentos', (req, res) => {
+app.put('/avistamentos', async (req, res) => {
   const { local, descricao } = req.body || {}
   const vazio = (valor) => typeof valor !== 'string' || valor.trim() === ''
   //validar antes de alterar a base ou o contador
@@ -46,7 +46,20 @@ app.put('/avistamentos', (req, res) => {
     descricao: descricao
   }
   avistamentos[id] = avistamento
+  //emitir o evento de criação de avistamento
+  await axios.post('http://localhost:10000/eventos', {
+    tipo: 'AvistamentoCriado',
+    dados: avistamento
+  })
   res.status(201).json(avistamento)
+})
+
+//POST /eventos
+//exibe o tipo do evento recebido e encerra a requisição
+app.post('/eventos', (req, res) => {
+  const evento = req.body
+  console.log(evento.tipo)
+  res.json({ msg: 'ok' })
 })
 
 const port = 4000
