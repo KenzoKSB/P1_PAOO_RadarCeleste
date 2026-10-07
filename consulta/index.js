@@ -41,6 +41,15 @@ const funcoes = {
     relatos.push(relato)
     //ajustar a baseConsulta para que ela aponte para a lista
     baseConsulta[relato.avistamentoId]['relatos'] = relatos
+  },
+  RelatoConfirmado: (confirmacao) => {
+    //localizar o relato pelo avistamentoId e pelo id e atualizar apenas o campo confirmacoes
+    const relatos = baseConsulta[confirmacao.avistamentoId]['relatos']
+    for (let relato of relatos) {
+      if (relato.id === confirmacao.id) {
+        relato.confirmacoes = confirmacao.confirmacoes
+      }
+    }
   }
 }
 
@@ -48,6 +57,16 @@ const funcoes = {
 //devolve a baseConsulta inteira
 app.get('/avistamentos', (req, res) => {
   res.json(baseConsulta)
+})
+
+//GET /avistamentos/1
+//devolve um único avistamento, com seus relatos
+app.get('/avistamentos/:id', (req, res) => {
+  const avistamento = baseConsulta[req.params.id]
+  if (!avistamento) {
+    return res.status(404).json({ erro: 'avistamento não encontrado' })
+  }
+  res.json(avistamento)
 })
 
 //POST /eventos
