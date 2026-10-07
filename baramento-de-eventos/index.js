@@ -18,6 +18,8 @@ app.post('/eventos', (req, res) => {
     .catch(err => console.log(`Falha ao repassar o evento para a porta 4100`))
   axios.post('http://localhost:4200/eventos', evento)
     .catch(err => console.log(`Falha ao repassar o evento para a porta 4200`))
+  axios.post('http://localhost:4300/eventos', evento)
+    .catch(err => console.log(`Falha ao repassar o evento para a porta 4300`))  
   res.json({ msg: 'ok' })
 })
 
