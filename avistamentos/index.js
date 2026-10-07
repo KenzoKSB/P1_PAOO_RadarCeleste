@@ -29,7 +29,7 @@ app.get('/avistamentos', (req, res) => {
   res.json(avistamentos)
 })
 
-//POST /avistamentos
+//PUT /avistamentos
 //corpo: { local, descricao }
 app.put('/avistamentos', (req, res) => {
   const { local, descricao } = req.body || {}

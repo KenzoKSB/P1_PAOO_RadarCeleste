@@ -1,0 +1,254 @@
+{
+  "info": {
+    "_postman_id": "d32f4399-fb66-448e-bfe3-0ebecf6e45e1",
+    "name": "Radar Celeste",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "avistamentos",
+      "item": [
+        {
+          "name": "Avistamento 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4000/avistamentos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "avistamentos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"local\": \"Liberdade\",\n  \"descricao\": \"Luz branca caindo do céu\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Avistamento 2",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4000/avistamentos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "avistamentos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"local\": \"Vila Mariana\",\n  \"descricao\": \"Objeto não identificado piscando\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Avistamento erro",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4000/avistamentos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "avistamentos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"local\": \"Avenida Paulista\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar avistamentos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/avistamentos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "avistamentos"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "relatos",
+      "item": [
+        {
+          "name": "Relato 1 no avistamento 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4100/avistamentos/1/relatos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4100",
+              "path": [
+                "avistamentos",
+                "1",
+                "relatos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"texto\": \"Observei uma luz branca de madrugada\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Relato 2 no avistamento 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4100/avistamentos/1/relatos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4100",
+              "path": [
+                "avistamentos",
+                "1",
+                "relatos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"texto\": \"Também vi a luz, voava muito rapido\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar relatos avistamento 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4100/avistamentos/1/relatos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4100",
+              "path": [
+                "avistamentos",
+                "1",
+                "relatos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar relatos avistamento 2",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4100/avistamentos/2/relatos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4100",
+              "path": [
+                "avistamentos",
+                "2",
+                "relatos"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "relatos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.20.0",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14",
+    "uuid": "^14.0.2"
+  }
+}
